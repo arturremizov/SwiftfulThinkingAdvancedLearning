@@ -32,6 +32,7 @@
 		AFD0297A294F4FF400462FB4 /* CustomTabBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD02979294F4FF400462FB4 /* CustomTabBarContainerView.swift */; };
 		AFD0297E294F546E00462FB4 /* TabBarItemsPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD0297D294F546E00462FB4 /* TabBarItemsPreferenceKey.swift */; };
 		AFD02980294F56B400462FB4 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD0297F294F56B400462FB4 /* TabBarItem.swift */; };
+		AFE266C12951ED11004D3045 /* UIViewRepresentableBotcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE266C02951ED11004D3045 /* UIViewRepresentableBotcamp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		AFD02979294F4FF400462FB4 /* CustomTabBarContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarContainerView.swift; sourceTree = "<group>"; };
 		AFD0297D294F546E00462FB4 /* TabBarItemsPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemsPreferenceKey.swift; sourceTree = "<group>"; };
 		AFD0297F294F56B400462FB4 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		AFE266C02951ED11004D3045 /* UIViewRepresentableBotcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewRepresentableBotcamp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				AFA4C22B294DFE0200798BBD /* PreferenceKeyBootcamp */,
 				AFD02974294F4A4700462FB4 /* CustomTabBar */,
 				AFADA2BC295099DE0073CBEE /* CustomNavBar */,
+				AFE266C02951ED11004D3045 /* UIViewRepresentableBotcamp.swift */,
 				AFA97B5929436CB500CAB4F5 /* Assets.xcassets */,
 				AFA97B5B29436CB500CAB4F5 /* Preview Content */,
 			);
@@ -244,6 +247,7 @@
 				AFD02980294F56B400462FB4 /* TabBarItem.swift in Sources */,
 				AFA4C22D294DFE5900798BBD /* GeometryPreferenceKeyBootcamp.swift in Sources */,
 				AF91D794294764BC00B23A35 /* MatchedGeometryEffectBootcamp.swift in Sources */,
+				AFE266C12951ED11004D3045 /* UIViewRepresentableBotcamp.swift in Sources */,
 				AF29B26C2948B7C700B082F8 /* CustomShapesBootcamp.swift in Sources */,
 				AFA7709A294A109B0008F962 /* CustomCurvesBootcamp.swift in Sources */,
 				AFADA2C42950A34D0073CBEE /* CustomNavView.swift in Sources */,
