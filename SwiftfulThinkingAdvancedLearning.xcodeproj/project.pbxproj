@@ -19,6 +19,7 @@
 		AF4DCEFC2943728A0033C1D7 /* ButtonStyleBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4DCEFB2943728A0033C1D7 /* ButtonStyleBootcamp.swift */; };
 		AF4E732C294B6987008D2DAA /* AnimateableDataBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E732B294B6987008D2DAA /* AnimateableDataBootcamp.swift */; };
 		AF7ACAC629533BB90073C077 /* UIViewControllerRepresentableBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7ACAC529533BB90073C077 /* UIViewControllerRepresentableBootcamp.swift */; };
+		AF87372629631723001FC2B0 /* CloudKitUserBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF87372529631723001FC2B0 /* CloudKitUserBootcamp.swift */; };
 		AF91D794294764BC00B23A35 /* MatchedGeometryEffectBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF91D793294764BC00B23A35 /* MatchedGeometryEffectBootcamp.swift */; };
 		AF992B89294CADA800460F17 /* ViewBuilderBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF992B88294CADA800460F17 /* ViewBuilderBootcamp.swift */; };
 		AFA4C22A294DF88B00798BBD /* PreferenceKeyBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA4C229294DF88B00798BBD /* PreferenceKeyBootcamp.swift */; };
@@ -77,6 +78,8 @@
 		AF4DCEFB2943728A0033C1D7 /* ButtonStyleBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyleBootcamp.swift; sourceTree = "<group>"; };
 		AF4E732B294B6987008D2DAA /* AnimateableDataBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateableDataBootcamp.swift; sourceTree = "<group>"; };
 		AF7ACAC529533BB90073C077 /* UIViewControllerRepresentableBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerRepresentableBootcamp.swift; sourceTree = "<group>"; };
+		AF87372529631723001FC2B0 /* CloudKitUserBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitUserBootcamp.swift; sourceTree = "<group>"; };
+		AF87372729631796001FC2B0 /* SwiftfulThinkingAdvancedLearning.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftfulThinkingAdvancedLearning.entitlements; sourceTree = "<group>"; };
 		AF91D793294764BC00B23A35 /* MatchedGeometryEffectBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedGeometryEffectBootcamp.swift; sourceTree = "<group>"; };
 		AF992B88294CADA800460F17 /* ViewBuilderBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBuilderBootcamp.swift; sourceTree = "<group>"; };
 		AFA4C229294DF88B00798BBD /* PreferenceKeyBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceKeyBootcamp.swift; sourceTree = "<group>"; };
@@ -158,6 +161,14 @@
 			path = SwiftfulThinkingAdvancedLearning_UITests;
 			sourceTree = "<group>";
 		};
+		AF873724296316FD001FC2B0 /* CloudKitBootcamps */ = {
+			isa = PBXGroup;
+			children = (
+				AF87372529631723001FC2B0 /* CloudKitUserBootcamp.swift */,
+			);
+			path = CloudKitBootcamps;
+			sourceTree = "<group>";
+		};
 		AFA4C22B294DFE0200798BBD /* PreferenceKeyBootcamp */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +202,7 @@
 		AFA97B5429436CB300CAB4F5 /* SwiftfulThinkingAdvancedLearning */ = {
 			isa = PBXGroup;
 			children = (
+				AF87372729631796001FC2B0 /* SwiftfulThinkingAdvancedLearning.entitlements */,
 				AFA97B5529436CB300CAB4F5 /* SwiftfulThinkingAdvancedLearningApp.swift */,
 				AFA97B6329436D1700CAB4F5 /* ViewModifierBootcamp.swift */,
 				AF4DCEFB2943728A0033C1D7 /* ButtonStyleBootcamp.swift */,
@@ -207,6 +219,7 @@
 				AF7ACAC529533BB90073C077 /* UIViewControllerRepresentableBootcamp.swift */,
 				AF1907E0295C818B00A9469B /* UnitTestingBootcamp */,
 				AF46D44B295F2E5E00DB61AE /* UITestingBootcampView.swift */,
+				AF873724296316FD001FC2B0 /* CloudKitBootcamps */,
 				AFA97B5929436CB500CAB4F5 /* Assets.xcassets */,
 				AFA97B5B29436CB500CAB4F5 /* Preview Content */,
 			);
@@ -409,6 +422,7 @@
 				AFADA2C62950A4760073CBEE /* CustomNavLink.swift in Sources */,
 				AFADA2C82950A7EE0073CBEE /* CustomNavBarPrefrenceKeys.swift in Sources */,
 				AFD0297A294F4FF400462FB4 /* CustomTabBarContainerView.swift in Sources */,
+				AF87372629631723001FC2B0 /* CloudKitUserBootcamp.swift in Sources */,
 				AF4E732C294B6987008D2DAA /* AnimateableDataBootcamp.swift in Sources */,
 				AFA4C22A294DF88B00798BBD /* PreferenceKeyBootcamp.swift in Sources */,
 				AF2A780A2944C1FE006E2D08 /* AnyTransitionBootcamp.swift in Sources */,
@@ -636,6 +650,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SwiftfulThinkingAdvancedLearning/SwiftfulThinkingAdvancedLearning.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftfulThinkingAdvancedLearning/Preview Content\"";
@@ -665,6 +680,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SwiftfulThinkingAdvancedLearning/SwiftfulThinkingAdvancedLearning.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftfulThinkingAdvancedLearning/Preview Content\"";
