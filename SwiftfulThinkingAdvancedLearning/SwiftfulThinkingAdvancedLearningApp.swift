@@ -23,7 +23,7 @@ struct SwiftfulThinkingAdvancedLearningApp: App {
     var body: some Scene {
         WindowGroup {
 //            UITestingBootcampView(isCurrentUserSignedIn: isCurrentUserSignedIn)
-            CloudKitUserBootcamp()
+            CloudKitCrudBootcamp()
         }
     }
 }
