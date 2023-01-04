@@ -10,6 +10,7 @@ import CloudKit
 
 struct FruitModel: Hashable {
     let name: String
+    let imageURL: URL?
     let record: CKRecord
 }
 
@@ -30,9 +31,32 @@ class CloudKitCrudBootcampViewModel: ObservableObject {
     private func addItem(name: String) {
         let newFruit = CKRecord(recordType: "Fruits")
         newFruit["name"] = name
+        
+        guard let imagePath = createLocalUrl(forImageNamed: "therock.jpg") else { return }
+        newFruit["image"] = CKAsset(fileURL: imagePath)
+        
         Task {
             await saveItem(record: newFruit)
         }
+    }
+    
+    private func createLocalUrl(forImageNamed name: String) -> URL? {
+
+        let fileManager = FileManager.default
+        let cacheDirectory = fileManager.urls(for: .cachesDirectory, in: .userDomainMask)[0]
+        let url = cacheDirectory.appendingPathComponent("\(name).png")
+        let path = url.path
+
+        guard fileManager.fileExists(atPath: path) else {
+            guard
+                let image = UIImage(named: name),
+                let data = image.pngData()
+            else { return nil }
+            fileManager.createFile(atPath: path, contents: data, attributes: nil)
+            return url
+        }
+        
+        return url
     }
     
     private func saveItem(record: CKRecord) async {
@@ -41,7 +65,9 @@ class CloudKitCrudBootcampViewModel: ObservableObject {
             print("Record: \(record)")
             await MainActor.run(body: {
                 text = ""
-                fetchItems()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [weak self] in
+                    self?.fetchItems()
+                }
             })
         } catch {
             print("Error: \(error)")
@@ -62,7 +88,9 @@ class CloudKitCrudBootcampViewModel: ObservableObject {
             switch result {
             case .success(let record):
                 guard let name = record["name"] as? String else { return }
-                items.append(FruitModel(name: name, record: record))
+                let imageAsset = record["image"] as? CKAsset
+                let imageURL = imageAsset?.fileURL
+                items.append(FruitModel(name: name, imageURL: imageURL, record: record))
             case .failure(let error):
                 print("Error recordMatchedBlock: \(error)")
             }
@@ -119,10 +147,23 @@ struct CloudKitCrudBootcamp: View {
                 
                 List {
                     ForEach(vm.fruits, id: \.self) { fruit in
-                        Text(fruit.name)
-                            .onTapGesture {
-                                vm.updateItem(fruit: fruit)
+                        HStack {
+                            Text(fruit.name)
+                            if let imageUrl = fruit.imageURL {
+                                AsyncImage(url: imageUrl, content: { image in
+                                    image
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: 50, height: 50)
+                                        .clipped()
+                                }, placeholder: {
+                                    ProgressView()
+                                })
                             }
+                        }
+                        .onTapGesture {
+                            vm.updateItem(fruit: fruit)
+                        }
                     }
                     .onDelete(perform: vm.deleteItem)
                 }
