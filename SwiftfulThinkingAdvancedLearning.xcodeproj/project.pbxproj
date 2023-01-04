@@ -43,6 +43,7 @@
 		AFD0297A294F4FF400462FB4 /* CustomTabBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD02979294F4FF400462FB4 /* CustomTabBarContainerView.swift */; };
 		AFD0297E294F546E00462FB4 /* TabBarItemsPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD0297D294F546E00462FB4 /* TabBarItemsPreferenceKey.swift */; };
 		AFD02980294F56B400462FB4 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD0297F294F56B400462FB4 /* TabBarItem.swift */; };
+		AFDAF6392965C2D7002A37C7 /* CloudKitPushNotificationBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDAF6382965C2D7002A37C7 /* CloudKitPushNotificationBootcamp.swift */; };
 		AFDF7B002964636100D3D05C /* CloudKitCrudBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDF7AFF2964636100D3D05C /* CloudKitCrudBootcamp.swift */; };
 		AFE266C12951ED11004D3045 /* UIViewRepresentableBotcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE266C02951ED11004D3045 /* UIViewRepresentableBotcamp.swift */; };
 /* End PBXBuildFile section */
@@ -105,6 +106,7 @@
 		AFD02979294F4FF400462FB4 /* CustomTabBarContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarContainerView.swift; sourceTree = "<group>"; };
 		AFD0297D294F546E00462FB4 /* TabBarItemsPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemsPreferenceKey.swift; sourceTree = "<group>"; };
 		AFD0297F294F56B400462FB4 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		AFDAF6382965C2D7002A37C7 /* CloudKitPushNotificationBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitPushNotificationBootcamp.swift; sourceTree = "<group>"; };
 		AFDF7AFF2964636100D3D05C /* CloudKitCrudBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitCrudBootcamp.swift; sourceTree = "<group>"; };
 		AFE266C02951ED11004D3045 /* UIViewRepresentableBotcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewRepresentableBotcamp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -168,6 +170,7 @@
 			children = (
 				AF87372529631723001FC2B0 /* CloudKitUserBootcamp.swift */,
 				AFDF7AFF2964636100D3D05C /* CloudKitCrudBootcamp.swift */,
+				AFDAF6382965C2D7002A37C7 /* CloudKitPushNotificationBootcamp.swift */,
 			);
 			path = CloudKitBootcamps;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				AF1907E2295C81BE00A9469B /* UnitTestingBootcampView.swift in Sources */,
 				AF91D794294764BC00B23A35 /* MatchedGeometryEffectBootcamp.swift in Sources */,
 				AFE266C12951ED11004D3045 /* UIViewRepresentableBotcamp.swift in Sources */,
+				AFDAF6392965C2D7002A37C7 /* CloudKitPushNotificationBootcamp.swift in Sources */,
 				AF29B26C2948B7C700B082F8 /* CustomShapesBootcamp.swift in Sources */,
 				AFA7709A294A109B0008F962 /* CustomCurvesBootcamp.swift in Sources */,
 				AFADA2C42950A34D0073CBEE /* CustomNavView.swift in Sources */,
