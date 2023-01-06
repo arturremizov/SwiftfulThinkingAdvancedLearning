@@ -6,16 +6,8 @@
 //
 
 import SwiftUI
-import CloudKit
 
 class CloudKitUserBootcampViewModel: ObservableObject {
-    
-    enum CouldKitError: String, LocalizedError {
-        case iCloudAccountNotFound
-        case iCloudAccountNotDetermine
-        case iCloudAccountRestricted
-        case iCloudAccountUnknown
-    }
     
     @Published var isSignedInToiCloud: Bool = false
     @Published var error: String = ""
@@ -26,57 +18,36 @@ class CloudKitUserBootcampViewModel: ObservableObject {
         Task {
             await getiCloudStatus()
             await requestPermission()
+            await getCurrentUserName()
         }
-        fetchiCloudRecordID()
     }
     
     private func getiCloudStatus() async {
         do {
-            let status = try await CKContainer.default().accountStatus()
+            let status = try await CloudKitUtility.getiCloudStatus()
             await MainActor.run {
-                switch status {
-                case .available:
-                    isSignedInToiCloud = true
-                case .noAccount:
-                    error = CouldKitError.iCloudAccountNotFound.rawValue
-                case .couldNotDetermine:
-                    error = CouldKitError.iCloudAccountNotDetermine.rawValue
-                case .restricted:
-                    error = CouldKitError.iCloudAccountRestricted.rawValue
-                default:
-                    error = CouldKitError.iCloudAccountUnknown.rawValue
-                }
+                isSignedInToiCloud = status
             }
         } catch {
-            print("Error: \(error)")
-            self.error = CouldKitError.iCloudAccountUnknown.rawValue
+            self.error = error.localizedDescription
         }
     }
     
     private func requestPermission() async {
-        let status = try? await CKContainer.default().requestApplicationPermission([.userDiscoverability])
-        if status == .granted {
+        let status = await CloudKitUtility.requestApplicationPermission()
+        await MainActor.run {
+            permissionStatus = status
+        }
+    }
+    
+    private func getCurrentUserName() async {
+        do {
+            let name = try await CloudKitUtility.discoverUserIdentity()
             await MainActor.run {
-                permissionStatus = true
+                userName = name
             }
-        }
-    }
-    
-    private func fetchiCloudRecordID() {
-        CKContainer.default().fetchUserRecordID { [weak self] id, error in
-            if let id {
-                self?.discoveriCloudUser(id: id)
-            }
-        }
-    }
-    
-    private func discoveriCloudUser(id: CKRecord.ID) {
-        CKContainer.default().discoverUserIdentity(withUserRecordID: id) { [weak self] identity, error in
-            DispatchQueue.main.async {
-                if let name = identity?.nameComponents?.givenName {
-                    self?.userName = name
-                }
-            }
+        } catch {
+            self.error = error.localizedDescription
         }
     }
 }

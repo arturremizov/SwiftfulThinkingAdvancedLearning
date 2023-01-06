@@ -8,10 +8,46 @@
 import SwiftUI
 import CloudKit
 
-struct FruitModel: Hashable {
+enum CloudKitFruitModelNames: String {
+    case name
+}
+
+struct FruitModel: Hashable, CloudKitableProtocol {
     let name: String
     let imageURL: URL?
+    let count: Int
     let record: CKRecord
+    
+    init?(record: CKRecord) {
+        guard let name = record[CloudKitFruitModelNames.name.rawValue] as? String else { return nil }
+        self.name = name
+        
+        let imageAsset = record["image"] as? CKAsset
+        let imageURL = imageAsset?.fileURL
+        self.imageURL = imageURL
+        
+        self.count = record["count"] as? Int ?? 0
+        
+        self.record = record
+    }
+    
+    init?(name: String, imageURL: URL?, count: Int?) {
+        let record = CKRecord(recordType: "Fruits")
+        record["name"] = name
+        if let imageURL {
+            record["image"] = CKAsset(fileURL: imageURL)
+        }
+        if let count {
+            record["count"] = count
+        }
+        self.init(record: record)
+    }
+    
+    func update(newName: String) -> FruitModel? {
+        let record = record
+        record["name"] = newName
+        return FruitModel(record: record)
+    }
 }
 
 class CloudKitCrudBootcampViewModel: ObservableObject {
@@ -20,23 +56,32 @@ class CloudKitCrudBootcampViewModel: ObservableObject {
     @Published var fruits: [FruitModel] = []
     
     init() {
-        fetchItems()
+        Task {
+            await fetchItems()
+        }
     }
     
     func addButtonPressed() {
         guard !text.isEmpty else { return }
-        addItem(name: text)
+        Task {
+            await addItem(name: text)
+        }
     }
     
-    private func addItem(name: String) {
-        let newFruit = CKRecord(recordType: "Fruits")
-        newFruit["name"] = name
+    private func addItem(name: String) async {
+        guard
+            let imagePath = createLocalUrl(forImageNamed: "therock.jpg"),
+            let newFruit = FruitModel(name: name, imageURL: imagePath, count: 5)
+        else { return }
         
-        guard let imagePath = createLocalUrl(forImageNamed: "therock.jpg") else { return }
-        newFruit["image"] = CKAsset(fileURL: imagePath)
-        
-        Task {
-            await saveItem(record: newFruit)
+        do {
+            try await CloudKitUtility.save(item: newFruit)
+            await MainActor.run {
+                fruits.insert(newFruit, at: 0)
+                text = ""
+            }
+        } catch {
+            print("Error: \(error)")
         }
     }
     
@@ -59,74 +104,37 @@ class CloudKitCrudBootcampViewModel: ObservableObject {
         return url
     }
     
-    private func saveItem(record: CKRecord) async {
-        do {
-            let record = try await CKContainer.default().publicCloudDatabase.save(record)
-            print("Record: \(record)")
-            await MainActor.run(body: {
-                text = ""
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [weak self] in
-                    self?.fetchItems()
-                }
-            })
-        } catch {
-            print("Error: \(error)")
-        }
-    }
-    
-    func fetchItems() {
+    func fetchItems() async {
         let predicate = NSPredicate(value: true)
 //        let predicate = NSPredicate(format: "name = %@", argumentArray: ["Coconut"])
-        let query = CKQuery(recordType: "Fruits", predicate: predicate)
-        query.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
-        let queryOperation = CKQueryOperation(query: query)
-//        queryOperation.resultsLimit = 2 // max 100
+        let sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
         
-        var items: [FruitModel] = []
-        
-        queryOperation.recordMatchedBlock = { recordId, result in
-            switch result {
-            case .success(let record):
-                guard let name = record["name"] as? String else { return }
-                let imageAsset = record["image"] as? CKAsset
-                let imageURL = imageAsset?.fileURL
-                items.append(FruitModel(name: name, imageURL: imageURL, record: record))
-            case .failure(let error):
-                print("Error recordMatchedBlock: \(error)")
-            }
+        let items: [FruitModel] = await CloudKitUtility.fetch(predicate: predicate, recordType: "Fruits", sortDescriptors: sortDescriptors)
+        await MainActor.run {
+            fruits = items
         }
-        
-        queryOperation.queryResultBlock = { [weak self] result in
-            print("RESULT: \(result)")
-            DispatchQueue.main.async {
-                self?.fruits = items
-            }
-        }
-        
-        addOperation(operation: queryOperation)
     }
     
-    private func addOperation(operation: CKDatabaseOperation) {
-        CKContainer.default().publicCloudDatabase.add(operation)
-    }
-    
-    func updateItem(fruit: FruitModel) {
-        let record = fruit.record
-        record["name"] = "NEW NAME!!!"
-        Task {
-           await saveItem(record: record)
+    func updateItem(fruit: FruitModel) async {
+        guard let updatedFruit = fruit.update(newName: "NEW NAME!!!") else { return }
+        do {
+            try await CloudKitUtility.save(item: updatedFruit)
+            await fetchItems()
+        } catch {
+            print("Error: \(error)")
         }
     }
     
     func deleteItem(indexSet: IndexSet) {
         guard let index = indexSet.first else { return }
         let fruit = fruits[index]
-        let record = fruit.record
-        
+     
         Task {
             do {
-                try await CKContainer.default().publicCloudDatabase.deleteRecord(withID: record.recordID)
-                fruits.remove(at: index)
+                try await CloudKitUtility.delete(item: fruit)
+                await MainActor.run {
+                    let _ = fruits.remove(at: index)
+                }
             } catch {
                 print("Error: \(error)")
             }
@@ -162,7 +170,9 @@ struct CloudKitCrudBootcamp: View {
                             }
                         }
                         .onTapGesture {
-                            vm.updateItem(fruit: fruit)
+                            Task {
+                                await vm.updateItem(fruit: fruit)
+                            }
                         }
                     }
                     .onDelete(perform: vm.deleteItem)
