@@ -20,6 +20,7 @@
 		AF4DCEFC2943728A0033C1D7 /* ButtonStyleBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4DCEFB2943728A0033C1D7 /* ButtonStyleBootcamp.swift */; };
 		AF4E732C294B6987008D2DAA /* AnimateableDataBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E732B294B6987008D2DAA /* AnimateableDataBootcamp.swift */; };
 		AF71BF9F2BC5A05800B474FC /* CustomBindingBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF71BF9E2BC5A05800B474FC /* CustomBindingBootcamp.swift */; };
+		AF73D18A2BC6F4210020F6A9 /* ErrorAlertBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73D1892BC6F4210020F6A9 /* ErrorAlertBootcamp.swift */; };
 		AF7ACAC629533BB90073C077 /* UIViewControllerRepresentableBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7ACAC529533BB90073C077 /* UIViewControllerRepresentableBootcamp.swift */; };
 		AF7C7EF529670598001F417E /* CloudKitUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7C7EF429670598001F417E /* CloudKitUtility.swift */; };
 		AF87372629631723001FC2B0 /* CloudKitUserBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF87372529631723001FC2B0 /* CloudKitUserBootcamp.swift */; };
@@ -84,6 +85,7 @@
 		AF4DCEFB2943728A0033C1D7 /* ButtonStyleBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyleBootcamp.swift; sourceTree = "<group>"; };
 		AF4E732B294B6987008D2DAA /* AnimateableDataBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateableDataBootcamp.swift; sourceTree = "<group>"; };
 		AF71BF9E2BC5A05800B474FC /* CustomBindingBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBindingBootcamp.swift; sourceTree = "<group>"; };
+		AF73D1892BC6F4210020F6A9 /* ErrorAlertBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlertBootcamp.swift; sourceTree = "<group>"; };
 		AF7ACAC529533BB90073C077 /* UIViewControllerRepresentableBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerRepresentableBootcamp.swift; sourceTree = "<group>"; };
 		AF7C7EF429670598001F417E /* CloudKitUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitUtility.swift; sourceTree = "<group>"; };
 		AF87372529631723001FC2B0 /* CloudKitUserBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitUserBootcamp.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				AF873724296316FD001FC2B0 /* CloudKitBootcamps */,
 				AF49D4DE2BC307980054279C /* TimelineViewBootcamp.swift */,
 				AF71BF9E2BC5A05800B474FC /* CustomBindingBootcamp.swift */,
+				AF73D1892BC6F4210020F6A9 /* ErrorAlertBootcamp.swift */,
 				AFA97B5929436CB500CAB4F5 /* Assets.xcassets */,
 				AFA97B5B29436CB500CAB4F5 /* Preview Content */,
 			);
@@ -433,6 +436,7 @@
 				AF49D4DF2BC307980054279C /* TimelineViewBootcamp.swift in Sources */,
 				AFA4C22F294E01DC00798BBD /* ScrollViewOffsetPreferenceKeyBootcamp.swift in Sources */,
 				AF4DCEFC2943728A0033C1D7 /* ButtonStyleBootcamp.swift in Sources */,
+				AF73D18A2BC6F4210020F6A9 /* ErrorAlertBootcamp.swift in Sources */,
 				AFC91F1B295DD9DE00E602EA /* NewMockDataService.swift in Sources */,
 				AF1907E4295C840200A9469B /* UnitTestingBootcampViewModel.swift in Sources */,
 				AFA97B6429436D1700CAB4F5 /* ViewModifierBootcamp.swift in Sources */,
