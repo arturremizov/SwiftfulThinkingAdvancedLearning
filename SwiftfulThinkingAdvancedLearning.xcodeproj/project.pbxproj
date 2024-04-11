@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF0E9AC32BC840C3005626ED /* KeyPathsBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0E9AC22BC840C3005626ED /* KeyPathsBootcamp.swift */; };
 		AF1907E2295C81BE00A9469B /* UnitTestingBootcampView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1907E1295C81BE00A9469B /* UnitTestingBootcampView.swift */; };
 		AF1907E4295C840200A9469B /* UnitTestingBootcampViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1907E3295C840200A9469B /* UnitTestingBootcampViewModel.swift */; };
 		AF1907EC295C853D00A9469B /* SwiftfulThinkingAdvancedLearning_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1907EB295C853D00A9469B /* SwiftfulThinkingAdvancedLearning_Tests.swift */; };
@@ -70,6 +71,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AF0E9AC22BC840C3005626ED /* KeyPathsBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPathsBootcamp.swift; sourceTree = "<group>"; };
 		AF1907E1295C81BE00A9469B /* UnitTestingBootcampView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestingBootcampView.swift; sourceTree = "<group>"; };
 		AF1907E3295C840200A9469B /* UnitTestingBootcampViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestingBootcampViewModel.swift; sourceTree = "<group>"; };
 		AF1907E9295C853D00A9469B /* SwiftfulThinkingAdvancedLearning_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftfulThinkingAdvancedLearning_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -238,6 +240,7 @@
 				AF49D4DE2BC307980054279C /* TimelineViewBootcamp.swift */,
 				AF71BF9E2BC5A05800B474FC /* CustomBindingBootcamp.swift */,
 				AF73D1892BC6F4210020F6A9 /* ErrorAlertBootcamp.swift */,
+				AF0E9AC22BC840C3005626ED /* KeyPathsBootcamp.swift */,
 				AFA97B5929436CB500CAB4F5 /* Assets.xcassets */,
 				AFA97B5B29436CB500CAB4F5 /* Preview Content */,
 			);
@@ -439,6 +442,7 @@
 				AF73D18A2BC6F4210020F6A9 /* ErrorAlertBootcamp.swift in Sources */,
 				AFC91F1B295DD9DE00E602EA /* NewMockDataService.swift in Sources */,
 				AF1907E4295C840200A9469B /* UnitTestingBootcampViewModel.swift in Sources */,
+				AF0E9AC32BC840C3005626ED /* KeyPathsBootcamp.swift in Sources */,
 				AFA97B6429436D1700CAB4F5 /* ViewModifierBootcamp.swift in Sources */,
 				AFDF7B002964636100D3D05C /* CloudKitCrudBootcamp.swift in Sources */,
 				AFADA2C029509B040073CBEE /* CustomNavBarView.swift in Sources */,
