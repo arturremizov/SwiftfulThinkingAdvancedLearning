@@ -14,6 +14,7 @@
 		AF1907F3295C860E00A9469B /* UnitTestingBootcampViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1907F2295C860E00A9469B /* UnitTestingBootcampViewModel_Tests.swift */; };
 		AF29B26C2948B7C700B082F8 /* CustomShapesBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF29B26B2948B7C700B082F8 /* CustomShapesBootcamp.swift */; };
 		AF2A780A2944C1FE006E2D08 /* AnyTransitionBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2A78092944C1FE006E2D08 /* AnyTransitionBootcamp.swift */; };
+		AF2DA31F2BC98A1C00190284 /* PropertyWrapperBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2DA31E2BC98A1C00190284 /* PropertyWrapperBootcamp.swift */; };
 		AF46D44C295F2E5E00DB61AE /* UITestingBootcampView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF46D44B295F2E5E00DB61AE /* UITestingBootcampView.swift */; };
 		AF46D454295F33C200DB61AE /* SwiftfulThinkingAdvancedLearning_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF46D453295F33C200DB61AE /* SwiftfulThinkingAdvancedLearning_UITests.swift */; };
 		AF46D45D295F350900DB61AE /* UITestingBootcampView_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF46D45C295F350900DB61AE /* UITestingBootcampView_UITests.swift */; };
@@ -79,6 +80,7 @@
 		AF1907F2295C860E00A9469B /* UnitTestingBootcampViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestingBootcampViewModel_Tests.swift; sourceTree = "<group>"; };
 		AF29B26B2948B7C700B082F8 /* CustomShapesBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomShapesBootcamp.swift; sourceTree = "<group>"; };
 		AF2A78092944C1FE006E2D08 /* AnyTransitionBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyTransitionBootcamp.swift; sourceTree = "<group>"; };
+		AF2DA31E2BC98A1C00190284 /* PropertyWrapperBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyWrapperBootcamp.swift; sourceTree = "<group>"; };
 		AF46D44B295F2E5E00DB61AE /* UITestingBootcampView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestingBootcampView.swift; sourceTree = "<group>"; };
 		AF46D451295F33C200DB61AE /* SwiftfulThinkingAdvancedLearning_UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftfulThinkingAdvancedLearning_UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF46D453295F33C200DB61AE /* SwiftfulThinkingAdvancedLearning_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftfulThinkingAdvancedLearning_UITests.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 				AF71BF9E2BC5A05800B474FC /* CustomBindingBootcamp.swift */,
 				AF73D1892BC6F4210020F6A9 /* ErrorAlertBootcamp.swift */,
 				AF0E9AC22BC840C3005626ED /* KeyPathsBootcamp.swift */,
+				AF2DA31E2BC98A1C00190284 /* PropertyWrapperBootcamp.swift */,
 				AFA97B5929436CB500CAB4F5 /* Assets.xcassets */,
 				AFA97B5B29436CB500CAB4F5 /* Preview Content */,
 			);
@@ -434,6 +437,7 @@
 				AFADA2C22950A1B60073CBEE /* CustomNavBarContainerView.swift in Sources */,
 				AFD02976294F4A6C00462FB4 /* AppTabBarView.swift in Sources */,
 				AF46D44C295F2E5E00DB61AE /* UITestingBootcampView.swift in Sources */,
+				AF2DA31F2BC98A1C00190284 /* PropertyWrapperBootcamp.swift in Sources */,
 				AF7C7EF529670598001F417E /* CloudKitUtility.swift in Sources */,
 				AFADA2BE29509A020073CBEE /* AppNavBarView.swift in Sources */,
 				AF49D4DF2BC307980054279C /* TimelineViewBootcamp.swift in Sources */,
